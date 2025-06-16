@@ -1,6 +1,14 @@
 import random
 
+from faker import Faker
+
 print("Bem vindo ao gerador de personagens!\n obs: Nessa primeira versão você poderá gerar apenas aleatoriamente.")
+
+fake = Faker()
+nomes_fantasia = [fake.unique.first_name() for _ in range(20)]
+nome = random.choice(nomes_fantasia)  # escolhe um nome aleatório da lista
+print(nome)
+
 
 racas = [
     "Aasimar", 
@@ -39,8 +47,36 @@ Atributos = [
     "Carisma"
 ]
 
+Alinhamento = [
+    "Leal e Bom",
+    "Neutro e Bom",
+    "Caótico e Bom",
+    "Leal e Neutro",
+    "Neutro",
+    "Caótico e Neutro",
+    "Leal e Mau",
+    "Neutro e Mau",
+    "Caótico e Mau"
+]
+
+Historico = [
+    "Acólito",
+    "Artífice",
+    "Criminoso",
+    "Erudito",
+    "Folk Hero",
+    "Nobre",
+    "Soldado",
+    "Sage",
+    "Hermit",
+    "Outlander"
+]
+
+
 raca_escolhida = random.choice(racas)
 classe_escolhida = random.choice(classes)
+historico_escolhido = random.choice(Historico)
+alinhamento_escolhido = random.choice(Alinhamento)
 
 def gerar_atributo():
     return random.randint(8, 15)
@@ -60,4 +96,7 @@ print(
     f"SAB ({sabedoria}) \n"
     f"CAR ({carisma}) \n"
 )
+
+#Combate 
+
 
