@@ -3,3 +3,12 @@
 # Tendo esses valores, faça um código que gere uma lista contendo o percentual de crescimento de bactérias por dia, 
 # comparando o número de bactérias em cada dia com o número de bactérias do dia anterior. Dica: para calcular o percentual 
 # de crescimento usamos a seguinte equação: 100 * (amostra_atual - amostra_passada) / (amostra_passada).
+
+bacterias = [1.2, 2.1, 3.3, 5.0, 7.8, 11.3, 16.6, 25.1, 37.8, 56.9]
+
+total_de_amostras = len(bacterias)
+porcentagem = []
+for i in range(1, total_de_amostras):
+    crescimento = 100 * (bacterias[i] - bacterias[i-1]) / bacterias[i-1]
+    porcentagem.append(crescimento)
+print(f'{porcentagem}%')
