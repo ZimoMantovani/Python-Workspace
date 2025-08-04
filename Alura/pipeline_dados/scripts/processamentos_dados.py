@@ -72,3 +72,22 @@ class Dados:
         combined_list.extend(dadosA.dados)
         combined_list.extend(dadosB.dados)
         return Dados(combined_list, 'list')
+    
+    #Transformando dados
+    def transformando_dados_tabela(self):
+        dados_combinados_tabela = [self.nome_colunas]
+        for row in self.dados:
+            linha = []
+            for coluna in self.nome_colunas:
+                linha.append(row.get(coluna,'Indisponivel'))
+            dados_combinados_tabela.append(linha)
+            
+        return dados_combinados_tabela
+
+    def salvando_dados(self, path):
+        with open(path,'w') as file:
+            
+            dados_combinados_tabela = self.transformando_dados_tabela()
+            
+            writer = csv.writer(file)
+            writer.writerows(dados_combinados_tabela)

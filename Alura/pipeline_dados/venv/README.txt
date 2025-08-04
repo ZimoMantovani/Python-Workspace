@@ -1,0 +1,1 @@
+Venv refere-se ao módulo do Python que permite criar ambientes virtuais isolados para projetos Python, no entanto, não havia necessidade de coloca-lo aqui, por conta do seu alto volume de informações.
